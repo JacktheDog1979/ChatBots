@@ -28,7 +28,27 @@ def ask_question(question, context):
 os.environ['COLUMNS'] = "10000"
 
 # Set OpenAI API key
+if not gpt_response:
+    gpt_response = "I'm sorry, I couldn't generate a response at this time."
 os.environ['OPENAI_API_KEY'] = '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'
+
+gpt_response = model.generate(
+        input_ids=input_ids, 
+        max_length=1000, 
+        do_sample=True, 
+        temperature=0.7,
+        top_p=0.95, 
+        top_k=50,
+        no_repeat_ngram_size=2,
+        num_return_sequences=1,
+    )[0]
+
+if not gpt_response:
+    gpt_response = "I'm sorry, I couldn't generate a response at this time."
+
+# Set OpenAI API key
+os.environ['OPENAI_API_KEY'] = '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'
+
 
 # Define function to read text from file
 def read_text_from_file(file_path):
