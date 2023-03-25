@@ -12,7 +12,7 @@ else:
     device = torch.device("cpu")
 
 # Enable CUDA if available
-if torch.cuda.is_available():
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     torch.backends.cudnn.enabled = True
     torch.backends.cudnn.benchmark = True
 
