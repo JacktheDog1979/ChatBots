@@ -12,9 +12,23 @@ else:
     device = torch.device("cpu")
 
 # Enable CUDA if available
+import os
+os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
+
+import docx2txt
+import transformers
+import torch
+
+# Set CUDA device if available
+if torch.cuda.is_available():
+    device = torch.device("cuda")
+else:
+    device = torch.device("cpu")
+
+# Enable CUDA if available
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    torch.backends.cudnn.enabled = True
-    torch.backends.cudnn.benchmark = True
+torch.backends.cudnn.enabled = True
+torch.backends.cudnn.benchmark = True
 
 def ask_question(question, context):
     model = transformers.pipeline("text-generation", model="gpt2")
