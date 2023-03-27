@@ -43,12 +43,18 @@ gpt_response = model.generate(
         num_return_sequences=1,
     )[0]
 
+def translate_text(self, text, target_language):
+    translate = YandexTranslate(self.api_key)
+    translation = translate.translate(text, target_language)
+    return translation['text'][0]
+
 if not gpt_response:
     gpt_response = "I'm sorry, I couldn't generate a response at this time."
 
 # Set OpenAI API key
 os.environ['OPENAI_API_KEY'] = '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'
 
+chatbot = ChatBot(api_key= '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')
 
 # Define function to read text from file
 def read_text_from_file(file_path):
