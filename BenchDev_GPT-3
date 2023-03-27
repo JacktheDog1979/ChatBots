@@ -1,0 +1,59 @@
+import openai
+import os
+from chatbot import ChatBot
+
+
+# Set OpenAI API key
+os.environ['OPENAI_API_KEY'] = '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'
+
+engine = "text-davinci-002"
+
+gpt_response = openai.Completion.create(
+    engine=engine,
+    prompt=prompt,
+    temperature=temperature,
+    max_tokens=max_tokens,
+    top_p=top_p,
+    frequency_penalty=frequency_penalty,
+    presence_penalty=presence_penalty,
+    stop=stop,
+)
+text = response.choices[0].text.strip()
+
+def translate_text(self, text, target_language):
+    translate = YandexTranslate(self.api_key)
+    translation = translate.translate(text, target_language)
+    return translation['text'][0]
+
+if not gpt_response:
+    gpt_response = "I'm sorry, I couldn't generate a response at this time."
+
+# Set OpenAI API key
+os.environ['OPENAI_API_KEY'] = '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'
+
+chatbot = ChatBot(api_key= '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')
+
+# Import necessary packages
+from llama_index import GPTSimpleVectorIndex, Document, SimpleDirectoryReader, download_loader
+import os
+from pathlib import Path
+
+
+os.environ['OPENAI_API_KEY'] = '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'
+
+
+# Loading from a directory
+DocxReader = download_loader("DocxReader")
+loader = DocxReader()
+documents = loader.load_data(file=Path("C:/Users/user/desktop/T-F_E-IAL.docx"))
+
+
+# Construct a simple vector index
+index = GPTSimpleVectorIndex(documents)
+
+
+# Querying the index
+response = index.query("Ok, i don't suppose you could give me an activity to connect to this HG")
+print(response)
+
+
