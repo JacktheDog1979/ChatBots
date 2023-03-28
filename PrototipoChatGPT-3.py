@@ -44,7 +44,7 @@ os.environ['COLUMNS'] = "10000"
 # Set OpenAI API key
 if not gpt_response:
     gpt_response = "I'm sorry, I couldn't generate a response at this time."
-os.environ['OPENAI_API_KEY'] = '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'
+os.environ['OPENAI_API_KEY'] = ''-------------------OPENAI_API_KEY-----------------''
 
 engine = "text-davinci-002"
 
@@ -70,9 +70,9 @@ if not gpt_response:
     gpt_response = "I'm sorry, I couldn't generate a response at this time."
 
 # Set OpenAI API key
-os.environ['OPENAI_API_KEY'] = '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'
+os.environ['OPENAI_API_KEY'] = ''-------------------OPENAI_API_KEY-----------------''
 
-chatbot = ChatBot(api_key= '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')
+chatbot = ChatBot(api_key= ''-------------------OPENAI_API_KEY-----------------'')
 
 # Define function to read text from file
 def read_text_from_file(file_path):
