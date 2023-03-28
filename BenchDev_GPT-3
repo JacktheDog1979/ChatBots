@@ -4,7 +4,7 @@ from chatbot import ChatBot
 
 
 # Set OpenAI API key
-os.environ['OPENAI_API_KEY'] = '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'
+os.environ['OPENAI_API_KEY'] = ''-------------------OPENAI_API_KEY-----------------''
 
 engine = "text-davinci-002"
 
@@ -29,9 +29,9 @@ if not gpt_response:
     gpt_response = "I'm sorry, I couldn't generate a response at this time."
 
 # Set OpenAI API key
-os.environ['OPENAI_API_KEY'] = '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'
+os.environ['OPENAI_API_KEY'] = ''-------------------OPENAI_API_KEY-----------------''
 
-chatbot = ChatBot(api_key= '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')
+chatbot = ChatBot(api_key= ''-------------------OPENAI_API_KEY-----------------'')
 
 # Import necessary packages
 from llama_index import GPTSimpleVectorIndex, Document, SimpleDirectoryReader, download_loader
@@ -39,7 +39,7 @@ import os
 from pathlib import Path
 
 
-os.environ['OPENAI_API_KEY'] = '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'
+os.environ['OPENAI_API_KEY'] = ''-------------------OPENAI_API_KEY-----------------''
 
 
 # Loading from a directory
